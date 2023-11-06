@@ -1,0 +1,29 @@
+<div *ngIf="beer" class="beer-card">
+    <!-- Clickable Image to open Dialog -->
+    <button class="detail-button" (click)="openDialog()">
+        <div class=" beer-img-bg">
+            <img src="../../../assets/loupe.png" alt="Details" class="detail-image">
+            <!-- Beer's Image -->
+            <img *ngIf="beer && beer.image_url !== null && beer.image_url !== image_url_undefined"
+                [src]="beer.image_url" alt="Beer Image" class="beer-img">
+            <!-- Beer's Image EEROR -->
+            <img *ngIf="beer === undefined || beer.image_url === null || beer.image_url === image_url_undefined"
+                src="../../../assets/beer-illustration.png" alt="Beer bottle" class="beer-img not-found">
+        </div>
+    </button>
+    <!-- Beer Details -->
+    <div class="beer-detail">
+        <h2>{{ beer.name }}</h2>
+        <div class="beer-details-card-container">
+            <div class="beer-details-card">
+                <strong>ABV</strong> {{ beer.abv }}
+            </div>
+            <div class="beer-details-card">
+                <strong>EBC</strong> {{ beer.ebc }}
+            </div>
+            <div class="beer-details-card">
+                <strong>IBU</strong> {{ beer.ibu }}
+            </div>
+        </div>
+    </div>
+</div>

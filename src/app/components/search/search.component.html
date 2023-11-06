@@ -1,0 +1,17 @@
+<!-- Search Bar Component -->
+<form class="search-container">
+    <mat-form-field class="search-input">
+        <!-- Search Icon -->
+        <img src="../../../assets/loupe.png" alt="Search" class="input-image">
+        <!-- Input to search a beer by name -->
+        <input type="text" placeholder="Search a beer" matInput [formControl]="searchControl" [matAutocomplete]="auto"
+            *ngIf="autocompletion">
+        <input type="text" placeholder="Search a beer" matInput [formControl]="searchControl" *ngIf="!autocompletion">
+        <!-- MatAutocompletion -->
+        <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption (optionSelected)="onOptionSelected($event)">
+            <mat-option *ngFor="let beer of filteredResults | async" [value]="beer.name">
+                {{ beer.name }}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</form>

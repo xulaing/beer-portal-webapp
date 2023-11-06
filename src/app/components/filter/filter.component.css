@@ -1,0 +1,56 @@
+/***** FILTER COMPONENT *****/
+.app-filter {
+    max-height: calc(100vh - 130px);
+    overflow: auto;
+}
+
+.app-filter::-webkit-scrollbar {
+    display: none;
+}
+
+.app-filter-container {
+    padding: 31px;
+    background-color: #FFDEB8;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+/***** SORT *****/
+.sort {
+    width: 100%;
+}
+
+/***** FILTER *****/
+.filter-name {
+    font-family: 'Biryani', sans-serif;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+}
+
+/***** Min Max controls *****/
+.filters-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.filters-controls input {
+    border: none;
+    border-radius: 999px;
+    width: 35%;
+    padding: 4px 8px;
+}
+
+.line {
+    width: 15%;
+    height: 1px;
+    background-color: #000;
+}
+
+/***** Ingredients *****/
+
+.ingredient-chip-list {
+    width: 100%;
+    margin-top: -10px;
+}

@@ -1,0 +1,71 @@
+/***** COMPONENT CONTAINER *****/
+.app-single-beer {
+    width: 100%;
+    height: calc(100vh - 130px);
+    display: flex;
+    justify-content: space-between;
+}
+
+/***** BEER DETAILS *****/
+
+app-beer-details {
+    width: 60%;
+    height: calc(100vh - 130px);
+    overflow: auto;
+    direction: rtl;
+}
+
+/***** BEER IMAGE *****/
+
+.right {
+    max-width: 40%;
+    width: 40%;
+    height: 95%;
+    margin-right: 0;
+    display: flex;
+    justify-content: end;
+    position: relative;
+
+    overflow: hidden;
+}
+
+.right .round-background {
+    max-width: 100%;
+    width: auto;
+    height: 100%;
+}
+
+.right .beer-illustration {
+    position: absolute;
+    z-index: 2;
+    height: 90%;
+    width: auto;
+    bottom: 20px;
+    right: 60px;
+    transform: rotate(-22.3deg);
+    animation: rotate-infinite 3s linear infinite;
+}
+
+p {
+    margin: 0;
+}
+
+/***** ANIMATION *****/
+
+@keyframes rotate-infinite {
+    0% {
+        transform: rotate(-22.3deg);
+    }
+
+    25% {
+        transform: rotate(-26.3deg);
+    }
+
+    75% {
+        transform: rotate(-18.3deg);
+    }
+
+    100% {
+        transform: rotate(-22.3deg);
+    }
+}

@@ -1,0 +1,15 @@
+/***** Search icon *****/
+.search-input .input-image {
+    width: 26px;
+    padding-right: 20px;
+}
+
+/***** Search input *****/
+.search-input {
+    width: 100%;
+}
+
+.search-input input {
+    width: 100%;
+    padding-right: 20px;
+}

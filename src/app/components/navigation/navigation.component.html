@@ -1,0 +1,17 @@
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <!-- Logo -->
+    <a routerLink="/home">
+        <img src="../../../assets/B.png" alt="Home" class="home-link">
+    </a>
+    <div class="nav">
+        <!-- Routes -->
+        <div class="link">
+            <a [ngClass]="{ 'active': isRouteActive('/browse') }" routerLink="/browse">Browse</a>
+            <a [ngClass]="{ 'active': isRouteActive('/suggestion') }" routerLink="/suggestion"
+                (click)="reloadRandomBeer()">Suggestion</a>
+        </div>
+        <!-- Beer Search Bar -->
+        <app-search [ngClass]="{ 'hidden': !showSearchBar }"></app-search>
+    </div>
+</nav>

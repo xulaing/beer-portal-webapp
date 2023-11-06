@@ -1,0 +1,28 @@
+.app-dialog {
+    display: flex;
+    justify-content: space-between;
+    max-height: 500px;
+}
+
+/***** BEER DETAILS *****/
+
+app-beer-details {
+    width: 70% !important;
+    max-height: calc(100vh - 100px);
+    overflow: scroll;
+    direction: rtl;
+}
+
+/***** BEER IMAGE *****/
+
+.beer-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30% !important;
+}
+
+.beer-illustration {
+    height: 400px;
+    padding: 20px;
+}

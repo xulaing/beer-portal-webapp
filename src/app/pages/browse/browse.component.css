@@ -1,0 +1,18 @@
+/***** BROWSE CONTAINER *****/
+.app-browse {
+    width: calc(100% - 114px);
+    height: calc(100vh - 130px);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 57px;
+    gap: 40px
+}
+
+/***** FILTER *****/
+app-filter {
+    width: 25%;
+}
+/***** CATALOG *****/
+app-catalog {
+    width: 70%;
+}

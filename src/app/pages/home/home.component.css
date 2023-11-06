@@ -1,0 +1,52 @@
+/***** HOME CONTAINER *****/
+.app-home {
+    width: 100%;
+    height: calc(100vh - 130px);
+    display: flex;
+    justify-content: space-between;
+}
+
+/***** LEFT CONTAINER *****/
+.left {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left .phrase {
+    width: 80%;
+    font-family: 'Bungee';
+    font-size: 48px;
+    color: #363125;
+    line-height: 1.5;
+}
+
+/***** RIGHT CONTAINER *****/
+.right {
+    max-width: 40%;
+    width: 40%;
+    height: 95%;
+    margin-right: 0;
+    display: flex;
+    justify-content: end;
+    position: relative;
+}
+
+.right img {
+    max-width: 100%;
+    width: auto;
+    height: 100%;
+}
+
+.right .beer-illustration {
+    position: absolute;
+    z-index: 2;
+    height: 90%;
+    width: auto;
+    bottom: 20px;
+}
+
+p {
+    margin: 0;
+}

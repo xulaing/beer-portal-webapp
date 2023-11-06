@@ -1,0 +1,50 @@
+<div class="app-filter">
+    <div class="app-filter-container">
+        <!-- Sort filter -->
+        <mat-form-field class="sort">
+            <mat-label>Sort by</mat-label>
+            <mat-select [(value)]="selectedSortOption" (selectionChange)="selectedSortOptionChange()">
+                <mat-option *ngFor="let option of sortOption" [value]="option">
+                    {{option.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="app-filter-container">
+        <!-- Name filter -->
+        <app-search></app-search>
+        <!-- ABV IBU EBC filter -->
+        <div *ngFor="let config of propertyControls" class="filter-controls-container">
+            <p class="filter-name">{{ config.label }}</p>
+            <div class="filters-controls">
+                <input type="number" placeholder="Min" matInput [formControl]="config.minControl">
+                <div class="line"></div>
+                <input type="number" placeholder="Max" matInput [formControl]="config.maxControl">
+            </div>
+        </div>
+        <!-- Ingredients filter -->
+        <form>
+            <p class="filter-name">Ingredients</p>
+            <mat-form-field class="ingredient-chip-list">
+                <mat-chip-grid #chipGrid aria-label="Ingredient selection">
+                    <mat-chip-row *ngFor="let ingredient of selectedIngredients"
+                        (removed)="removeIngredient(ingredient)">
+                        {{ ingredient }}
+                        <button matChipRemove [attr.aria-label]="'remove ' + ingredient">
+                            <mat-icon>cancel</mat-icon>
+                        </button>
+                    </mat-chip-row>
+                </mat-chip-grid>
+                <input placeholder="New Ingredient..." #ingredientInput [formControl]="ingredientControl"
+                    [matChipInputFor]="chipGrid" [matAutocomplete]="auto"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                    (matChipInputTokenEnd)="addIngredient($event)" />
+                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectedIngredient($event)">
+                    <mat-option *ngFor="let ingredient of filteredIngredients | async" [value]="ingredient">
+                        {{ ingredient }}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+        </form>
+    </div>
+</div>

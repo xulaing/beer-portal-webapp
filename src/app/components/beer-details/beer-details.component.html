@@ -1,0 +1,64 @@
+<div class="left" [ngClass]="{ 'dialog-mode': inDialog }">
+    <div *ngIf="beerDetails" class="left-container">
+        <!-- Beer's Tag -->
+        <div class="beer-tagline">
+            {{ beerDetails.tagline }}
+        </div>
+        <!-- Beer's Name -->
+        <h1>{{ beerDetails.name }}</h1>
+        <!-- Beer's Description -->
+        <div class="beer-details description">
+            {{ beerDetails.description }}
+        </div>
+        <!-- Beer's Brew Date -->
+        <div class="beer-details">
+            <strong>First Brewed:</strong> {{ beerDetails.first_brewed }}
+        </div>
+        <!-- ABV EBC IBU Card -->
+        <div class="beer-details-card-container">
+            <div class="beer-details-card">
+                <strong>ABV</strong> {{ beerDetails.abv }}
+            </div>
+            <div class="beer-details-card">
+                <strong>EBC</strong> {{ beerDetails.ebc }}
+            </div>
+            <div class="beer-details-card">
+                <strong>IBU</strong> {{ beerDetails.ibu }}
+            </div>
+        </div>
+        <!-- Ingredient MatTable -->
+        <h3>Ingredients</h3>
+        <div *ngIf="beerIngredients" class="ingredient">
+            <mat-table [dataSource]="beerIngredients.hop">
+                <ng-container matColumnDef="hop">
+                    <mat-header-cell *matHeaderCellDef>Hop</mat-header-cell>
+                    <mat-cell *matCellDef="let ingredient">{{ ingredient }}</mat-cell>
+                </ng-container>
+                <mat-header-row *matHeaderRowDef="['hop']"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: ['hop']"></mat-row>
+            </mat-table>
+
+            <mat-table [dataSource]="beerIngredients.malt">
+                <ng-container matColumnDef="malt">
+                    <mat-header-cell *matHeaderCellDef>Malt</mat-header-cell>
+                    <mat-cell *matCellDef="let ingredient">{{ ingredient }}</mat-cell>
+                </ng-container>
+                <mat-header-row *matHeaderRowDef="['malt']"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: ['malt']"></mat-row>
+            </mat-table>
+
+            <mat-table [dataSource]="[beerIngredients.yeast]">
+                <ng-container matColumnDef="yeast">
+                    <mat-header-cell *matHeaderCellDef>Yeast</mat-header-cell>
+                    <mat-cell *matCellDef="let ingredient">{{ ingredient }}</mat-cell>
+                </ng-container>
+                <mat-header-row *matHeaderRowDef="['yeast']"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: ['yeast']"></mat-row>
+            </mat-table>
+        </div>
+    </div>
+    <!-- Error -->
+    <div *ngIf="beerDetails === undefined" class="left-container">
+        <p>Oops! Something went wrong. Retry another time.</p>
+    </div>
+</div>

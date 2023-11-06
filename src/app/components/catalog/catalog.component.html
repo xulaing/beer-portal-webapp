@@ -1,0 +1,4 @@
+<div class="catalog" (scroll)="onScroll()">
+    <!-- Beer Card for each beer -->
+    <app-beer-card *ngFor="let beer of loadedBeers" [beer]="beer"></app-beer-card>
+</div>

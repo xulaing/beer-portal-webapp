@@ -1,0 +1,72 @@
+/***** BEER CARD *****/
+.beer-card {
+    height: calc(100% - 20px);
+    background-color: rgba(255, 255, 255, 0.22);
+    border-radius: 20px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/***** BEER IMAGE BUTTON *****/
+.beer-img-bg {
+    display: flex;
+    justify-content: center;
+    padding: 4px 0;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 222, 184, 1) 100%);
+    border-radius: 15px;
+    position: relative
+}
+
+.detail-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.detail-image {
+    position: absolute;
+    z-index: 2;
+    top: 4px;
+    right: 4px;
+    width: 26px;
+    transition: all 0.3s ease-in-out;
+}
+
+.detail-button:hover .detail-image {
+    width: 34px;
+}
+
+.beer-img {
+    height: 141px;
+}
+
+/***** BEER DETAILS *****/
+
+.beer-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: -webkit-fill-available;
+    align-items: stretch;
+}
+
+.beer-details-card-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.beer-details-card {
+    background-color: rgba(255, 255, 255, 0.22);
+    border-radius: 20px;
+    width: 30%;
+    min-width: 50px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'font.css';
+
+body {
+    margin: 0;
+    background-color: rgba(235, 119, 84, 0.59);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: black;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: black;
+}

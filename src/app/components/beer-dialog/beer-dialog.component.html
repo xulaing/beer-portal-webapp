@@ -1,0 +1,13 @@
+<div class="app-dialog">
+    <!-- Beer's Details -->
+    <app-beer-details [beerDetails]="beerDetails" [beerIngredients]="beerIngredients"
+        [inDialog]="true"></app-beer-details>
+    <div class="beer-img">
+        <!-- Beer's Image -->
+        <img *ngIf="beerDetails && beerDetails.image_url !== null && beerDetails.image_url !== image_url_undefined"
+            [src]="beerDetails.image_url" alt="Beer bottle" class="beer-illustration">
+        <!-- Beer's Image Error -->
+        <img *ngIf="beerDetails === undefined || beerDetails.image_url === null || beerDetails.image_url === image_url_undefined"
+            src="../../../assets/beer-illustration.png" alt="Beer bottle" class="beer-illustration">
+    </div>
+</div>

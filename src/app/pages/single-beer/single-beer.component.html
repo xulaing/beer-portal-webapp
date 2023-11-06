@@ -1,0 +1,16 @@
+<!-- Display Beer's Detail Page/Dialog -->
+<div class="app-single-beer">
+    <!-- Beer Details -->
+    <app-beer-details [beerDetails]="beerDetails" [beerIngredients]="beerIngredients"></app-beer-details>
+    <!-- Beer Image -->
+    <div class="right">
+        <!-- Beige Round Background -->
+        <img src="../../../assets/round.png" alt="Round" class="round-background">
+        <!-- Beer's Image -->
+        <img *ngIf="beerDetails && beerDetails.image_url !== null && beerDetails.image_url !== image_url_undefined"
+            [src]="beerDetails.image_url" alt="Beer bottle" class="beer-illustration">
+        <!-- Beer's Image Error -->
+        <img *ngIf="beerDetails === undefined || beerDetails.image_url === null || beerDetails.image_url === image_url_undefined"
+            src="../../../assets/beer-illustration.png" alt="Beer bottle" class="beer-illustration not-found">
+    </div>
+</div>

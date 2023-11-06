@@ -1,0 +1,21 @@
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: stretch;
+    max-height: calc(100vh - 130px);
+    overflow: auto;
+}
+
+app-beer-card {
+    height: 100%;
+    align-self: stretch;
+}
+
+/***** RESPONSIVE *****/
+
+@media screen and (max-width: 768px) {
+    .catalog {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
