@@ -23,7 +23,7 @@ Before you start, make sure you have the following software installed:
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/beer-portal-webapp.git
+   git clone https://github.com/xulaing/beer-portal-webapp.git
    ```
 
 2. Change into the project directory:
@@ -52,7 +52,7 @@ With the dependencies installed, you can now start the Beer Portal Web App.
 
 ## Features
 
-The Beer Portal Web App offers several key features:
+The Beer Portal Web App offers several key features (The application is not responsive yet):
 
 1. **Home Page**: The landing page.
 
