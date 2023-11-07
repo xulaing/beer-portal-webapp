@@ -17,9 +17,9 @@
         <div *ngFor="let config of propertyControls" class="filter-controls-container">
             <p class="filter-name">{{ config.label }}</p>
             <div class="filters-controls">
-                <input type="number" placeholder="Min" matInput [formControl]="config.minControl">
+                <input type="number" placeholder="Min" matInput [formControl]="config.minControl" min="0">
                 <div class="line"></div>
-                <input type="number" placeholder="Max" matInput [formControl]="config.maxControl">
+                <input type="number" placeholder="Max" matInput [formControl]="config.maxControl" min="0">
             </div>
         </div>
         <!-- Ingredients filter -->
