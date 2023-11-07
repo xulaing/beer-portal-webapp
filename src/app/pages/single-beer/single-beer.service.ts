@@ -25,7 +25,7 @@ export class SingleBeerService {
     return this.http.get<Beer[]>(`${this.apiUrl}/random`);
   }
 
-  reloadRandomBeer() {
-    this.reloadRandomBeerSource.next(true);
+  reloadRandomBeer(value : boolean) {
+    this.reloadRandomBeerSource.next(value);
   }
 }

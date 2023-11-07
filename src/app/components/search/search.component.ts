@@ -66,6 +66,7 @@ export class BeerSearchComponent implements OnInit {
 
   // Navigate to the single-beer route with the beer's ID as a parameter
   onOptionSelected(event: MatAutocompleteSelectedEvent): void {
+    console.log('here');
     const selectedBeerName = event.option.value;
     const encodedBeerName = encodeURIComponent(selectedBeerName);
     this.beerService.searchBeer(encodedBeerName).subscribe((beer) => {

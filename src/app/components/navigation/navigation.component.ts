@@ -7,14 +7,16 @@ import { NavigationEnd, Router } from '@angular/router';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css'],
 })
-export class NavigationComponent {
+export class NavigationComponent implements OnInit {
   currentRoute: string = '';
   showSearchBar: boolean = false;
 
   constructor(
     private singleBeerService: SingleBeerService,
     private router: Router
-  ) {
+  ) {}
+
+  ngOnInit(): void {
     // Subscribe to route change events using the router.
     this.router.events.subscribe((event) => {
       // Check if the event is a NavigationEnd event.
@@ -22,6 +24,10 @@ export class NavigationComponent {
         this.currentRoute = event.url;
         // Set 'showSearchBar' to true if the current route is not '/browse', otherwise set it to false.
         this.showSearchBar = this.currentRoute != '/browse' ? true : false;
+
+        if (this.currentRoute !== '/suggestion') {
+          this.singleBeerService.reloadRandomBeer(false);
+        }
       }
     });
   }
@@ -29,7 +35,7 @@ export class NavigationComponent {
   // Reload a random beer
   reloadRandomBeer() {
     if (this.currentRoute === '/suggestion') {
-      this.singleBeerService.reloadRandomBeer();
+      this.singleBeerService.reloadRandomBeer(true);
     }
   }
 
